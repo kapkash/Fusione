@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fusione - Hyperfast UK Broadband</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      /* Define CSS Variables for Dynamic Theming */
+      :root {
+        /* Default Theme (Bumble) - Yellow/Black */
+        --color-brand: #FFD600;
+        --color-black: #121212;
+        --color-cream: #FFFDF5;
+        --color-mint: #6EE7B7;
+        --color-coral: #F87171;
+        --color-purple: #A855F7;
+        --color-blue: #60A5FA;
+      }
+
+      /* Lilac Theme - Purple/Deep Violet */
+      body.theme-lilac {
+        --color-brand: #C084FC;
+        --color-black: #2E1065;
+        --color-cream: #FAF5FF;
+        --color-mint: #34D399; 
+        --color-coral: #F472B6;
+        --color-purple: #A855F7;
+        --color-blue: #60A5FA;
+      }
+
+      /* Mint Theme - Emerald/Dark Green */
+      body.theme-mint {
+        --color-brand: #34D399;
+        --color-black: #064E3B;
+        --color-cream: #ECFDF5;
+        --color-mint: #6EE7B7;
+        --color-coral: #F87171;
+        --color-purple: #34D399;
+        --color-blue: #60A5FA;
+      }
+
+      /* Candy Theme - Rose/Deep Red */
+      body.theme-candy {
+        --color-brand: #FB7185;
+        --color-black: #4C0519;
+        --color-cream: #FFF1F2;
+        --color-mint: #34D399;
+        --color-coral: #F43F5E;
+        --color-purple: #FB7185;
+        --color-blue: #60A5FA;
+      }
+
+      body { 
+        font-family: 'Plus Jakarta Sans', sans-serif; 
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Young Serif', serif; }
+      
+      ::selection {
+        background-color: var(--color-black);
+        color: var(--color-brand);
+      }
+      
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              serif: ['"Young Serif"', 'serif'],
+            },
+            colors: {
+              fusione: {
+                yellow: 'var(--color-brand)',
+                black: 'var(--color-black)',
+                cream: 'var(--color-cream)',
+                purple: 'var(--color-purple)',
+                mint: 'var(--color-mint)',
+                coral: 'var(--color-coral)',
+                blue: 'var(--color-blue)'
+              }
+            },
+            boxShadow: {
+              'neo': '5px 5px 0px 0px var(--color-black)',
+              'neo-hover': '8px 8px 0px 0px var(--color-black)',
+              'neo-sm': '3px 3px 0px 0px var(--color-black)',
+              'neo-lg': '10px 10px 0px 0px var(--color-black)',
+            },
+            borderWidth: {
+              '3': '3px',
+            },
+            borderRadius: {
+              '4xl': '2.5rem',
+            },
+            animation: {
+              'bounce-slow': 'bounce 3s infinite',
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+              'wiggle': 'wiggle 1s ease-in-out infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'slide-in-right': 'slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pop': 'pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              wiggle: {
+                '0%, 100%': { transform: 'rotate(-3deg)' },
+                '50%': { transform: 'rotate(3deg)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              slideUp: {
+                '0%': { opacity: '0', transform: 'translateY(60px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              pop: {
+                '0%': { opacity: '0', transform: 'scale(0.5)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-hot-toast": "https://aistudiocdn.com/react-hot-toast@^2.6.0",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-fusione-cream text-fusione-black antialiased transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
